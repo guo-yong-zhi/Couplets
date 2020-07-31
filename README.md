@@ -16,9 +16,10 @@
 训练过程见`couplets.ipynb`  
 
 ## to do
-[ ] beam search使用batch mode  
-[ ] 在beam search中，根据字频降低相似对联的得分  
-[ ] decoder共享使用encoder的注意力权重或参数，直接捕获上下联的对应关系 
+* [ ] beam search使用batch mode  
+* [ ] 在beam search中，根据字频降低相似对联的得分  
+* [ ] decoder共享使用encoder的注意力权重或参数，直接捕获上下联的对应关系 
+* [ ] 使用大型预训练模型的词嵌入向量或浅层特征 
 
 *大量代码copy自[annotated-transformer](https://github.com/harvardnlp/annotated-transformer)*  
 *训练数据来自[couplet-dataset](https://github.com/wb14123/couplet-dataset)*

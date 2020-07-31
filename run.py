@@ -55,7 +55,9 @@ def itos(i, itos=VOCAB.itos):
                     at=lambda c:not ut.iscollection(c[0][0]))
 
 model = make_model(n_vocab, n_vocab).to(DEVICE)
-model.load_state_dict(torch.load('model_state_share.pt', map_location=DEVICE))
+# model.load_state_dict(torch.load('model_state_share.pt', map_location=DEVICE))
+state_dict = torch.hub.load_state_dict_from_url('https://github.com/guo-yong-zhi/Couplets/releases/download/1.0/model_state_share.pt', model_dir='.', map_location=DEVICE)
+model.load_state_dict(state_dict)
 
 from decode_search import *
 
