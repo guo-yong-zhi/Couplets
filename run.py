@@ -135,7 +135,7 @@ def decode_margin_step2(model, src, trg, mask, padmask, beamsize):
     
     for i in ind:
         r = tc.clone(trg)
-        r[0, max_pos] = i
+        r[0, max_pos] = int(i)
         result.append(r)
 #     print(itos([r.cpu().numpy() for r in result]))
     return result

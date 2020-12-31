@@ -78,7 +78,7 @@ def decode_margin_step(model, src, trg, mask, padmask, beamsize):
     
     for i in ind:
         r = tc.clone(trg)
-        r[0, max_pos] = i
+        r[0, max_pos] = int(i)
         result.append(r)
 #     print(itos([r.cpu().numpy() for r in result]))
     return result, np.concatenate((logps, g[ind]))
@@ -141,7 +141,7 @@ def decode_2D_step(model, src, trg, mask, padmask, beamsize):
     result = []
     for i,v in zip(rind, cind):
         r = tc.clone(trg)
-        r[0, i] = v
+        r[0, i] = int(v)
         result.append(r)
     return result, gnp[rind, cind]
 
@@ -162,7 +162,7 @@ def decode_2D_step_2(model, src, trg, mask, padmask, beamsize):
     result = []
     for i,v in zip(rind, cind):
         r = tc.clone(trg)
-        r[0, i] = v
+        r[0, i] = int(v)
         result.append(r)
     return result
 
