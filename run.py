@@ -34,7 +34,7 @@ class Batch:
                                   itos(self.trg.cpu().numpy()))
     
 def format_couplets_str(first, second='', stoi={}, mask_token="[]"):
-    first = list(first.replace(' ', '').replace(',', '，').replace('.', '。'))
+    first = list(first.replace(' ', '').replace(',', '，').replace('.', '；').replace('。', '；'))
     second = [s.replace(' ', mask_token).replace('-', mask_token) for s in second]
     l = (len(first)-len(second))
     assert l >= 0
