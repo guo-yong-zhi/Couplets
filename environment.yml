@@ -1,0 +1,7 @@
+name: couplets-environment
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - pytorch
