@@ -1,5 +1,5 @@
 # Couplets
-
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/guo-yong-zhi/Couplets/master?filepath=run.ipynb)  
 基于["Attention is All You Need"](https://arxiv.org/abs/1706.03762)中的Transformer实现自动对对联。较大的改动有：更改了DecoderLayer中第二层attention的query, key, value以捕获上联的模式和下联的语义，增加了一层memory的线性叠加以捕获上联的语义，调整了PositionalEncoding的方式。另外还实现了greedy、一维beam search、二维beam search等解码方式。
 ## 输出示例
 | 上联                                                     | 参考下联                                         | 系统输出                                                 |
@@ -12,7 +12,7 @@
 | 只有刚强的人，才有神圣的意志，凡是战斗的人，才能取得胜利 | ——                                               | 若无敬畏之事，业无天地之精神，大为人民之事，业可成就辉煌 |
 
 ## 使用方法
-1. 使用预训练模型对对联：`python run.py`。如需指定下联部分字，中间用`|`隔开，下联空字用空格或减号占位。  
+1. 使用预训练模型对对联：`python run.py`。如需指定下联部分字，中间用`|`隔开，下联空字用空格或减号占位。[在线试试](https://mybinder.org/v2/gh/guo-yong-zhi/Couplets/master?filepath=run.ipynb)  
     > 输入示例：
     >* 白日依山尽  
     >* 白日依山尽|-河-海  
